@@ -50,8 +50,8 @@ name = "newsafr.json"
     # else:
     # print('Incorrect input, try again')
 
-original_text = 'революция матрица матрица стол 1234567, 1234567, 1234567, 12345 пандус пайтон'
-expected = {'революция':1, 'матрица':2, '1234567':3}
+original_text = 'революция матрица матрица матрица стол 1234567, 1234567, 1234567, 12345 пандус пайтон'
+expected = {'революция':1, 'матрица':3, '1234567':3}
 actual = count_word(original_text)
 print(actual)
 assert actual == expected
@@ -59,7 +59,8 @@ assert actual == expected
 print('\n')
 
 word_value = expected
-returned = {1:'123456', 2:'матрица'}
+returned = {1:'матрица', 2:'1234567'}
+print('Необходимо получить: ', returned, '\n')
 actual1 = sorting(word_value)
-print("Необходимо получить: ", actual1)
+print("Полученное: ", actual1)
 assert actual1 == returned
