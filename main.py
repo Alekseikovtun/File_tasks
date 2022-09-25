@@ -22,6 +22,18 @@ def count_word(original_text):
             word_value[word]=1
     return word_value
 
+def sorting(word_value):
+    sorted_list = dict(sorted(word_value.items(), key = lambda word_value:word_value[1], reverse = True))
+    counter = 1
+    top = {}
+    for word in sorted_list:
+        top[counter] = word
+        counter += 1
+        if counter == 10:
+            break
+    return top
+    # return sorted_list
+
 
 
 
@@ -31,7 +43,7 @@ print()
     # name = input("Enter file name: newsafr.json or newsafr.xml or enter exit: ")
 name = "newsafr.json"
     # if name == "newsafr.json":
-top_10 = count_word(read_files(name))
+top_10 = sorting(count_word(read_files(name)))
 print(top_10)
     # elif name == "exit":
     #     break
